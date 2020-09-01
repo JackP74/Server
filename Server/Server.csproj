@@ -38,11 +38,11 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConsoleControl">
-      <HintPath>..\..\..\..\Desktop\others\ConsoleControl.dll</HintPath>
+    <Reference Include="ConsoleControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Console-Control.1.0.0\lib\net40\ConsoleControl.dll</HintPath>
     </Reference>
-    <Reference Include="MessageCustomHandler, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MessageCustomHandler.1.0.0.1\lib\net40\MessageCustomHandler.dll</HintPath>
+    <Reference Include="MessageCustomHandler, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessageCustomHandler.1.0.0.2\lib\net40\MessageCustomHandler.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
