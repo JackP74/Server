@@ -1,0 +1,22 @@
+connect - Start server
+disconnect - Stop server
+cmd * - Executes command
+shutdown * - Executes shutdown command
+clear - Clears logs
+help - Shows help
+hide - Hides server
+show - Makes server visible
+close - Closes the program
+apps - List of apps
+admin - Show if program has admin access
+bit - Show if program is running in 64 or 32 bit mode
+GetActiveWindow - Get active program
+KillActiveWindow - Kills active program
+kill * - Kill process by id or name
+memory - Clears used memory
+volume * - Sets volume
+rnd * - Generate random number
+screen * - Toggle screen
+PMP * - Control media player
+RunAs * - Runs app
+ToConnect * - Force listen
