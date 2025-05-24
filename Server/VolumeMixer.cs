@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using CoreAudio.Enumerations;
 using CoreAudio.Interfaces;
@@ -65,7 +62,7 @@ namespace Server
                     }
 
                 }
-                ApplicationVolumeInformation avi = new ApplicationVolumeInformation(getsession, GetProcessID, GetVolume, GetName, GetIconPath);
+                ApplicationVolumeInformation avi = new(getsession, GetProcessID, GetVolume, GetName, GetIconPath);
 
                 yield return avi;
                 Marshal.ReleaseComObject(ctl);

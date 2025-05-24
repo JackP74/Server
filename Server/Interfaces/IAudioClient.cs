@@ -19,7 +19,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using CoreAudio.Externals;
 using CoreAudio.Enumerations;
 using CoreAudio.Constants;
 
